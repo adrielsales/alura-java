@@ -1,27 +1,27 @@
 class Funcionario {
-	String nome;
-	String departamento;
-	double salario;
-	String dataDeEntradaNoBanco;
-	String rg;
+	private String nome;
+	private String departamento;
+	private double salario;
+	private Data dataDeEntradaNoBanco = new Data();
+	private String rg;
 
 	/*um valor em %*/
-	void recebeAumento(double valorDoAumento){
+	public void recebeAumento(double valorDoAumento){
 		double aumento = this.salario * valorDoAumento;
 		this.salario += aumento;
 	}
 
-	double calculaGanhoAnual(){
+	public double calculaGanhoAnual(){
 		double ganhoAnual = this.salario * 12;
 		System.out.println("Ganho Anual: R$ " + ganhoAnual);
 		return ganhoAnual;
 	}
 
-	void mostra(){
+	public void mostra(){
 		System.out.println("Funcionario: " + this.nome);
 		System.out.println("RG: " + this.rg);
 		System.out.println("Departamento: " + this.departamento);
-		System.out.println("No Banco desde: " + this.dataDeEntradaNoBanco);
+		System.out.println("No Banco desde: " + this.dataDeEntradaNoBanco.getFormatada());
 		System.out.println("");
 
 		System.out.println("Salario incial: " + this.salario);
@@ -29,4 +29,45 @@ class Funcionario {
 		System.out.println("Salario Apos aumento: " + this.salario);
 		this.calculaGanhoAnual();
 	}
+
+	public void setNome(String nome){
+		this.nome = nome;
+	}
+
+	public void setDepartamento(String departamento){
+		this.departamento = departamento;
+	}
+
+	public void setSalario(double salario){
+		this.salario = salario;
+	}
+
+	public void setDataDeEntradaNoBanco(int dia, int mes, int ano){
+		this.dataDeEntradaNoBanco.criaData(dia, mes, ano);
+	}
+
+	public void setRg(String rg){
+		this.rg = rg;
+	}
+
+	public String getNome(){
+		return this.nome;
+	}
+
+	public String getDepartamento(){
+		return this.departamento;
+	}
+
+	public double getSalario(){
+		return this.salario;
+	}
+
+	public Data getDataDeEntradaNoBanco(){
+		return this.dataDeEntradaNoBanco;
+	}
+
+	public String getRg(){
+		return this.rg;
+	}
+
 }
