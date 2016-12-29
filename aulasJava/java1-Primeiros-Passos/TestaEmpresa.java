@@ -18,10 +18,9 @@ class TestaEmpresa {
 		f4.setNome ("Linda Mells");
 		f3.setDepartamento ("Atendimento");
 
-		Empresa empresa = new Empresa();
+		Empresa empresa = new Empresa(10);
 		empresa.nome = "Lojas Bahia";
 		empresa.cnpj = "111.222.333/0001-00";
-		empresa.funcionarios = new Funcionario[10];
 
 		int i = 1;
 		while(i < 5){

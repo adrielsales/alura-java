@@ -5,6 +5,20 @@ class Funcionario {
 	private Data dataDeEntradaNoBanco = new Data();
 	private String rg;
 
+	private static int proximoIdentificador;
+	private int identificador;
+
+	public Funcionario(){}
+
+	public Funcionario(String nome){
+		this.nome = nome;
+		this.identificador = ++Funcionario.proximoIdentificador;
+	}
+
+	public int getIdentificador(){
+		return this.identificador;
+	}
+
 	/*um valor em %*/
 	public void recebeAumento(double valorDoAumento){
 		double aumento = this.salario * valorDoAumento;
@@ -22,12 +36,13 @@ class Funcionario {
 		System.out.println("RG: " + this.rg);
 		System.out.println("Departamento: " + this.departamento);
 		System.out.println("No Banco desde: " + this.dataDeEntradaNoBanco.getFormatada());
-		System.out.println("");
-
+		//System.out.println("");
 		System.out.println("Salario incial: " + this.salario);
 		this.recebeAumento(0.5);
 		System.out.println("Salario Apos aumento: " + this.salario);
+		System.out.println("Identificador nº: " + getIdentificador());
 		this.calculaGanhoAnual();
+		System.out.println("");
 	}
 
 	public void setNome(String nome){

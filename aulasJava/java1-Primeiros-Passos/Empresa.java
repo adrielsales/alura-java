@@ -4,6 +4,10 @@ class Empresa {
 	String cnpj;
 	Funcionario[] funcionarios;
 
+	public Empresa(int tamanhoDoArray){
+		this.funcionarios = new Funcionario[tamanhoDoArray];
+	}
+
 	void adicionar(Funcionario funcionario){
 		for (int i = 0; i < 3; i++) {
 			if(this.funcionarios[i] == null){

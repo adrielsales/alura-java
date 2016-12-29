@@ -1,9 +1,7 @@
 class MainFuncionario {
 	public static void main(String[] args) {
 
-		Funcionario funcionario1 = new Funcionario();
-
-		funcionario1.setNome ("Adriel José");
+		Funcionario funcionario1 = new Funcionario("Adriel José");
 		funcionario1.setDepartamento ("TI");
 		funcionario1.setSalario(1000.0);
 		funcionario1.setDataDeEntradaNoBanco(15,05,2005);
@@ -11,21 +9,17 @@ class MainFuncionario {
 
 		Funcionario f3 = new Funcionario();
 		f3.setNome ("Antonio das Quantas");
-
 		funcionario1.mostra();
 
-		Funcionario funcionario2 = new Funcionario();
-
-		funcionario2.setNome ("Adriel Sales");
+		Funcionario funcionario2 = new Funcionario("Eli Sales");
 		funcionario2.setDepartamento ("TI");
 		funcionario2.setSalario(1000.0);
 		funcionario2.setDataDeEntradaNoBanco(01,01,1999);
 		funcionario2.setRg ("2225001");
-
 		funcionario2.mostra();
 
-		Funcionario f4 = new Funcionario();
-		f4.setNome ("Linda Mells");
+		Funcionario f4 = new Funcionario("Linda Mells");
+		f4.mostra();
 
 		if(funcionario1 == f3){
 			System.out.println("São iguais");
@@ -33,8 +27,7 @@ class MainFuncionario {
 			System.out.println("São diferentes");
 		}
 
-		Empresa empresa = new Empresa();
-		empresa.funcionarios = new Funcionario[3];
+		Empresa empresa = new Empresa(5);
 		empresa.nome = "Lojas Bahia";
 		empresa.cnpj = "111.222.333/0001-00";
 
